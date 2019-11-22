@@ -11,6 +11,10 @@ byte vibrate = 0;
 
 void setup(){
  Serial.begin(57600);
+pinMode(2,OUTPUT);
+pinMode(3,OUTPUT);
+pinMode(5,OUTPUT);
+pinMode(8,OUTPUT);
 
  //CHANGES for v1.6 HERE!!! **************PAY ATTENTION*************
   
@@ -114,7 +118,7 @@ void loop(){
      if(ps2x.ButtonPressed(PSB_PAD_UP)) { 
       digitalWrite(2,1);
       analogWrite(3,100);
-      digitalWrite(4,1);
+      digitalWrite(8,1);
       analogWrite(5,100);
 
       }
@@ -126,7 +130,7 @@ void loop(){
       if(ps2x.ButtonPressed(PSB_PAD_RIGHT)){
       digitalWrite(2,1);
       analogWrite(3,100);
-      digitalWrite(4,1);
+      digitalWrite(8,1);
       analogWrite(5,0);
    
       }
@@ -138,7 +142,7 @@ void loop(){
       if(ps2x.ButtonPressed(PSB_PAD_LEFT)){
       digitalWrite(2,1);
       analogWrite(3,0);
-      digitalWrite(4,1);
+      digitalWrite(8,1);
       analogWrite(5,100);
       }
       if(ps2x.ButtonReleased(PSB_PAD_LEFT))
@@ -149,7 +153,7 @@ void loop(){
       if(ps2x.ButtonPressed(PSB_PAD_DOWN)){
       digitalWrite(2,0);
       analogWrite(3,100);
-      digitalWrite(4,0);
+      digitalWrite(8,0);
       analogWrite(5,100);
       }   
       if(ps2x.ButtonReleased(PSB_PAD_DOWN))
@@ -184,7 +188,7 @@ void loop(){
     if(ps2x.ButtonPressed(PSB_RED)){ //will be TRUE if button was JUST pressed
     digitalWrite(2,0);
     analogWrite(3,100);
-    digitalWrite(4,0);
+    digitalWrite(8,0);
     analogWrite(5,0);
     }
     if(ps2x.ButtonReleased(PSB_RED)){ //will be TRUE if button was JUST pressed
@@ -195,7 +199,7 @@ void loop(){
     {            //will be TRUE if button was JUST released
     digitalWrite(2,0);
     analogWrite(3,0);
-    digitalWrite(4,0);
+    digitalWrite(8,0);
     analogWrite(5,100); 
     } 
     if(ps2x.ButtonReleased(PSB_PINK)){            //will be TRUE if button was JUST released
